@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras._tf_keras.keras.layers import ImageDataGenerator
 
 def get_data_generators(img_size=(224, 224), batch_size=32, train_dir='data/processed/train', val_dir='data/processed/validation'):
     train_datagen = ImageDataGenerator(

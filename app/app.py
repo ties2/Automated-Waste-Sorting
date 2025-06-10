@@ -1,12 +1,14 @@
 # Example using Flask
+import tensorflow as tf
 from flask import Flask, request, jsonify
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
+from tensorflow import keras
+from keras._tf_keras.keras.preprocessing import image
+from keras._tf_keras.keras.models import load_model
 import numpy as np
 import io
 
 app = Flask(__name__)
-model = load_model('trained_models/waste_sorter_model.h5')
+model = load_model('../trained_models/waste_sorter_model.h5')
 class_names = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash'] # Adjust based on your dataset
 
 @app.route('/predict', methods=['POST'])
